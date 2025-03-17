@@ -17,8 +17,6 @@ include_once("utility.php");
 <?php
 // Improve the game. :)
 
-//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
-
 // Elaborate inforation from .csv file.
 /*echo "Sto aprendo il file";
 
