@@ -47,11 +47,6 @@ writeReport(json_encode($data));
 delete("aa.altervista.org");
 $data = readAllFromDatabase();
 writeReport(json_encode($data));*/
-
-if(isset($_COOKIE["Insert"])){
-    $value = $_COOKIE["Insert"];
-}
-
 ?>
 <header>
 <div class="container">
@@ -89,7 +84,9 @@ if(isset($_COOKIE["Insert"])){
         <label for="file"> File </label>
         <input type="file" value="File" name="file" id="file">
     </div>
-    <input type="submit" name="submit" value="Invia form">
+    <div class="form-group">
+        <input type="submit" name="submit" value="Invia form">
+    </div>
 </form>
 
 </main>
