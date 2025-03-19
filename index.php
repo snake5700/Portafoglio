@@ -10,6 +10,7 @@ include_once("utility.php");
 
 <html lang="it">
 <head>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -51,16 +52,22 @@ writeReport(json_encode($data));*/
 <header>
 <div class="container">
     <?php 
-        $Cracco = rand(0,1);
-
-        if($Cracco === 1)
-            echo "<h1> Tu sei aria fritta cit. Cracco </h1>";
-        else
-            echo "<h1> Bravo Merlo! </h1>";
+        if(isset($_COOKIE["Cracco"])){
+            $value = $_COOKIE["Cracco"];
+            if($value > 0)
+                echo "<h1> Sembra un piatto di Marchesi </h1>";
+            else
+                echo "<h1> Bravo merlo, hai fatto un errore </h1>";
+            setcookie("Cracco", "", time()-360);
+        }
     ?>
 </div>  
 </header>
 <main>
+<article>
+    <h1> Benvenuti nel password manager </h1>
+    <p> Le vostre password saranno memorizzate correttamente, in modo sicuro e nessuno le saprà oltre a voi e me . Inoltre potrete visualizzarle quando vi sarete autenticati, in alternativa cliccate <a href="private/index.php"> qui </a> </p>
+</article>
 <p> Compilare il form manualmente con la formula <span class="keyword">(domain, url, username, password)</span>.</p>
 <form action="validate.php" method="post">
     <div class="form-group">
@@ -88,7 +95,6 @@ writeReport(json_encode($data));*/
         <input type="submit" name="submit" value="Invia form">
     </div>
 </form>
-
 </main>
 <footer>
     <div class="container">

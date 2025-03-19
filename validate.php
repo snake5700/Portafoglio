@@ -26,7 +26,7 @@ $url = urlencode($url);
 
 if(!checkIfRowExist($domain,$url,$username)){
     $esit=insert($domain,$url,$username,$password);
-    setcookie("Insert",$esit,time()+360);
-    header("Location:../");
+    setcookie("Cracco",$esit,time()+360);
+    header("Location:../P");
 }
 ?>

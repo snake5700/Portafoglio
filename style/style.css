@@ -10,12 +10,47 @@
     overflow: hidden;
 }
 
+h1{font-size: 2.6rem;}
+
+.keyword{
+    color: #da5c1e;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+a:hover{
+    color: #fe0a52;
+    font-size: 1.2em;
+}
+
+div#answer{
+    width: 20%;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: #000;
+}
+
+div.success{
+    background-color: #a5ff0d;
+}
+
+div.error{
+    background-color: #ff4e00;
+    
+}
+
 body{
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     background-color: #f4f4f4;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+header, footer{
+    padding: 1rem 0 1rem  0;
+    vertical-align: middle;
 }
 
 header{
@@ -31,6 +66,16 @@ main{
     padding: 1rem;
 }
 
+article{
+    background-color: #f2f2f2;
+    padding: 1rem;
+}
+
+article > h1{
+    font-size: 2.4rem;
+    padding: 1rem 0 1rem 0;
+}
+
 form{
     display: flex;
     justify-content: center;
@@ -43,13 +88,13 @@ form > .form-group{
     width: 18rem;
 }
 
-form label{
+form  label{
     float: left;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     padding-bottom: 0.2rem;
 }
 
-form input{
+form  input{
     padding: 5px;
     border-radius: 10px;
     width: 100%;
@@ -59,7 +104,7 @@ form input[type="submit"]{
     background-color: #333;
     color: #fff;
     width: auto;
-    padding: 0.5rem;
+    padding: 0.8rem;
 }
 
 footer{
