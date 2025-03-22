@@ -6,6 +6,15 @@ require("database/conDb.php");
 include("database/query.php");
 include_once("utility.php");
 
+// Add session management.
+
+// This page should be replaced for user authentication. and renamed as index.html
+// After the user is authenticated, it should be redireted to it's private page. Use session's and cookies.
+
+// Style will not be modified.
+
+// For html file.. It's better to show a registraction form with a big logo and a little description of the service.
+
 ?>
 
 <html lang="it">
@@ -15,40 +24,6 @@ include_once("utility.php");
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<?php
-// Improve the game. :)
-
-// Elaborate inforation from .csv file.
-/*echo "Sto aprendo il file";
-
-$stream = openFile();
-
-echo "File aperto, inizio la lettura";
-
-$data = readFromFile($stream);
-
-echo "Ho letto il file, ora ne converto gli elementi in una lista";
-
-
-foreach($data as $k => $v){
-    list($domain, $url, $username, $password) = $v;
-    if(checkIfRowExist($domain, $url, $username, $password))
-        continue;
-    insert($domain, $url, $username, $password);
-}
-// Enjoy meals.
-
-$data = readAllFromDatabase();
-writeReport(json_encode($data));
-
-update("aa.altervista.org", "https%3A%2F%2Faa.altervista.org%2Findex.php", "dentrolastoria", "Suka");
-$data = readAllFromDatabase();
-writeReport(json_encode($data));
-
-delete("aa.altervista.org");
-$data = readAllFromDatabase();
-writeReport(json_encode($data));*/
-?>
 <header>
 <div class="container">
     <?php 

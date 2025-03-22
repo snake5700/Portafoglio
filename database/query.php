@@ -59,4 +59,5 @@ function delete($domain){
         throw new RunTimeException("Delete: ".$stmt->errno);
 }
 
+// A function that return the password of a website if it exists.
 ?>
