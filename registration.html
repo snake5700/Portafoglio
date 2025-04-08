@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Password Manager">
+    <meta name="author" content="Adamska Shalansaska">
+    <meta name="keywords" content="password, manager, security, safe, registration">
+    <title> Password Manager | Registration </title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+    <a href="index.php" class="logo"> <img src="images/Logo.png" alt="Logo"> </a>
+</div>
+</header>
+<main>
+    <form action="validate.php" method="post">
+        <div class="form-group">
+            <label for="surname"> Cognome </label>
+            <input id="surname" name="surname" placeholder="Digitare il cognome" required>
+        </div>
+        <div class="form-group">
+            <label for="name"> Nome </label>
+            <input id="name" name="name" placeholder="Digitare il nome" required>
+        </div>
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="email" id="email" name="email" placeholder="Digitare la mail" required>
+        </div>
+        <div class="form-group">
+            <label for="password"> Password </label>
+            <input type="password" id="password" name="password" placeholder="Digitare la password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password"> Conferma Password </label>
+            <input type="password" id="confirm_password" name="confirm" placeholder="Digitare nuovamente la password" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Registrati" name="Registration" class="btn">
+        </div>
+    </form>
+</main>
+</body>
+</html>

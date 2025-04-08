@@ -14,6 +14,24 @@ h1{font-size: 2.6rem;}
 
 p{text-align: justify;}
 
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-btn{
+    background-color: orangered;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.center{text-align: center;}
+
+.right{float: right;}
+
 .keyword{
     color: #da5c1e;
     font-weight: bolder;
@@ -31,59 +49,38 @@ a:hover{
     padding: 0.5rem 1rem;
     border-radius: 10px;
     margin: 1rem 0 1rem 0;
+    cursor: pointer;
 }
 
 body{
-    font-family: Georgia, serif;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
     background-color: #f4f4f4;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-header, footer{
-    padding: 1rem 0 1rem  0;
-    vertical-align: middle;
-    min-height: 70px;
-}
-
-
 header{
     background-color: #333;
     color: #fff;
-    text-align: center;
-    border-bottom: #f4f4f4 solid 3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;  
 }
 
 header li{
+    padding: 0.5rem 0.5rem;
     display: inline;
-    padding: 0 0.5rem 0 0.5rem;
-    list-style: none;
 }
 
 header a{color: #fff;}
 
-main{
-    text-align: center;
-    padding: 1rem;
-}
-
 main .info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main .info article{
-    background-color: #f2f2f2;
-    padding: 1rem;
-    max-width: 33%;
-}
-
-main .info article > h1{
-    font-size: 2.4rem;
-    padding: 1rem 0 1rem 0;
-    text-align: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
 }
 
 form{
@@ -121,6 +118,5 @@ footer{
     background-color: #333;
     color: #fff;
     text-align: center;
-    border-top: #f4f4f4 solid 4px;
     margin-top: auto;
 }
