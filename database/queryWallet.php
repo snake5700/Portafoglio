@@ -1,6 +1,6 @@
 <?php
 
-require_once("conDb.php");
+require_once("../wallet/conDb.php");
 
 
 // Insert a row inside the database (It doesn't check if a row exist).

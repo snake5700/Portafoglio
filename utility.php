@@ -47,4 +47,9 @@
         $file=fopen("report.json","w") or die("<p> Impossibile leggere file</p>"); // Replace.
         fwrite($file,$data);
     }
+
+    function writeLog($data){
+        $file=fopen("log.txt","a") or die("<p> Impossibile leggere file </p>"); 
+        fwrite($file,$data);
+    }
 ?>

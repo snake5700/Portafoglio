@@ -1,32 +1,34 @@
 <?php
 
-require_once("database/query.php");
+require_once("database/queryUsers.php");
+include_once("utility.php");
 
-if(!isset($_POST["submit"]))
-    die("<p> Impossibile inviare il form, tornare indietro </p>");
+if(!isset($_POST["Registration"]))
+    writeLog("Accesso non autorizzato:".date("Y-m-d H:i:s").",".$_SERVER["REMOTE_ADDR"].",".$_SERVER["HTTP_USER_AGENT"]."\n");
 
-if((empty($_POST["domain"])) || (empty($_POST["url"])) || (empty($_POST["mail"])) || (empty($_POST["password"])))
-    die("<p> Uno o più campi sono vuoti </p>");
+if((empty($_POST["surname"])) || (empty($_POST["name"])) || (empty($_POST["email"])) || (empty($_POST["password"])) || (empty($_POST["confirm"])))
+    header("Location: index.php");
 
-$domain = htmlspecialchars(trim($_POST["domain"]));
+// Check if form is filled.
 
-$url = htmlspecialchars(trim($_POST["url"]));
+$surname = htmlspecialchars(trim($_POST["surname"]));
+$name = htmlspecialchars(trim($_POST["name"]));
+$username = htmlspecialchars(trim($_POST["email"]));
+$password = htmlspecialchars(trim($_POST["password"]));
+$confirm = htmlspecialchars(trim($_POST["confirm"]));
 
-if(!filter_var($url, FILTER_VALIDATE_URL))
-    die("<p> Url non valido </p>");
-
-$username = htmlspecialchars(trim($_POST["mail"]));
+// File .js per controllare questo.
 
 if(!filter_var($username, FILTER_VALIDATE_EMAIL))
-    die("<p> Email non valida! </p>");
+    die("<p> Email non valida, si prega di riprovare!</p>");
 
-$password = password_hash(htmlspecialchars(trim($_POST["password"])), PASSWORD_DEFAULT);
+if($password != $confirm)
+    die("<p> Password non coincidenti, si prega di riprovare!</p>");
 
-$url = urlencode($url); 
+$password = password_hash($password, PASSWORD_DEFAULT);
 
-if(!checkIfRowExist($domain,$url,$username)){
-    $esit=insert($domain,$url,$username,$password);
-    setcookie("Cracco",$esit,time()+360);
-    header("Location:../P");
-}
+if(!insert($surname, $name, $username, $password))
+    header("Location: index.php");
+else
+    header("Location: private/");
 ?>
