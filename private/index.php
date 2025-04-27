@@ -5,67 +5,73 @@
     - Delete or update a  row;
     - See all his password with a javascritp function;*/
     session_start();
-    if(!isset($_SESSION["user"]))
+    if(!isset($_SESSION["user"])){
         header("Location: ../index.html");
+        exit();
+    }
 ?>
 <html lang="it">
 <head>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 <header>
-<div class="container">
-    <?php 
-        if(isset($_COOKIE["Cracco"])){
-            $value = $_COOKIE["Cracco"];
-            if($value > 0)
-                echo "<h1> Sembra un piatto di Marchesi </h1>";
-            else
-                echo "<h1> Bravo merlo, hai fatto un errore </h1>";
-            setcookie("Cracco", "", time()-360);
-        }
-    ?>
-</div>  
+    <a href="#" class="logo"> <img src="../images/VeroLogoNoSfondo1.png" alt="logo"> </a>
+    <nav class="center desktop">
+        <ul>
+            <li class="current"> <a href="#"> Home </a> </li>
+            <li> <a href="#"> About </a> </li>
+            <li> <a href="#"> Contact </a> </li> 
+        </ul>
+    </nav>
+    <nav class="right">
+        <ul>
+            <li> <button class="nav-btn" onclick="location.href='login.html'"> Sign In </button> </li>
+            <li> <img src="../images/user.png" class="user-circle" alt="user"> 
+<!-- Aggiungere dropdown menu, aggiustare la usercard. -->
+            </li>
+
+        </ul>
+    </nav>
 </header>
 <main>
-<article>
-    <h1> Benvenuti nel password manager </h1>
-    <p> Le vostre password saranno memorizzate correttamente, in modo sicuro e nessuno le saprà oltre a voi e me . Inoltre potrete visualizzarle quando vi sarete autenticati, in alternativa cliccate <a href="private/index.php"> qui </a> </p>
-</article>
-<p> Compilare il form manualmente con la formula <span class="keyword">(domain, url, username, password)</span>.</p>
-<form action="validate.php" method="post">
-    <div class="form-group">
-        <label for="domain"> Dominio </label> 
-        <input placeholder="Inserire Dominio" name="domain" id="domain" autofocus required>
+<section class="info">
+    <div class="info-news">
+        <article>
+            <h1> Password manager </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi sem, viverra a nulla quis, porttitor sagittis leo. Aenean ullamcorper faucibus turpis, eget sodales ante consectetur eget. Cras a tincidunt neque. Fusce nec arcu tellus. Vivamus maximus, erat et tempus dapibus, neque ex vulputate augue, eu laoreet lacus ligula eget enim. Duis aliquam justo sed risus mattis vestibulum non viverra diam. Cras id bibendum justo, id blandit nunc. Sed convallis odio sit amet enim scelerisque, a feugiat ligula rutrum. Donec tincidunt molestie porttitor. Fusce egestas purus eget augue semper, vel consequat dolor venenatis. </p>
+        </article>
+        <aside class="right"> <img src="images/security" alt="security" class="square-image"> </aside>
     </div>
-    <div class="form-group">
-        <label for="url"> Url </label>
-        <input placeholder="Inserire Url" name="url" id="url" required>
+    <div class="info-news">
+        <article>
+            <h1> Perché? </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi sem, viverra a nulla quis, porttitor sagittis leo. Aenean ullamcorper faucibus turpis, eget sodales ante consectetur eget. Cras a tincidunt neque. Fusce nec arcu tellus. Vivamus maximus, erat et tempus dapibus, neque ex vulputate augue, eu laoreet lacus ligula eget enim. Duis aliquam justo sed risus mattis vestibulum non viverra diam. Cras id bibendum justo, id blandit nunc. Sed convallis odio sit amet enim scelerisque, a feugiat ligula rutrum. Donec tincidunt molestie porttitor. Fusce egestas purus eget augue semper, vel consequat dolor venenatis.</p>
+        </article>
+        <aside class="right"> <img src="images/security" alt="Photo" class="square-image"> </aside>
     </div>
-    <div class="form-group">
-        <label for="mail"> Email </label>
-        <input type="mail" placeholder="Inserire Email" name="mail" id="mail" required>
+    <div class="info-news">
+        <article>
+            <h1> Proposta </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi sem, viverra a nulla quis, porttitor sagittis leo. Aenean ullamcorper faucibus turpis, eget sodales ante consectetur eget. Cras a tincidunt neque. Fusce nec arcu tellus. Vivamus maximus, erat et tempus dapibus, neque ex vulputate augue, eu laoreet lacus ligula eget enim. Duis aliquam justo sed risus mattis vestibulum non viverra diam. Cras id bibendum justo, id blandit nunc. Sed convallis odio sit amet enim scelerisque, a feugiat ligula rutrum. Donec tincidunt molestie porttitor. Fusce egestas purus eget augue semper, vel consequat dolor venenatis.</p>
+        </article>
+        <aside class="right"> <img src="images/security" alt="Photo" class="square-image"> </aside>
     </div>
-    <div class="form-group">
-        <label for="password"> Password </label>
-        <input type="password" placeholder="Inserire Password" name="password" id="password" required>
-    </div>
-    <p> In alternativa è possibile caricare un file </p>
-    <div class="form-group">
-        <label for="file"> File </label>
-        <input type="file" value="File" name="file" id="file">
-    </div>
-    <div class="form-group">
-        <input type="submit" name="submit" value="Invia form">
-    </div>
-</form>
+</section>
 </main>
 <footer>
-    <div class="container">
-        <?php echo "<h1>Copyright ®  ".date("Y")." all rights are reserved!</h1>" ?>
-    </div>
+    <a href="#" class="logo"> <img src="../images/VeroLogoNoSfondo1.png" alt="logo"> </a>
+        <p> Copyright &copy; Adamska Shalansaska all rights are reserved. </p>
+    <nav class="social-desktop center desktop">
+        <ul>
+            <li> <a href="#"> Instagram </a> </li>
+            <li> <a href="#"> Facebook </a> </li>
+            <li> <a href="#"> Telegram </a> </li>
+            <li> <a href="#"> GitHub </a> </li>
+        </ul>
+    </nav>
 </footer>
 </body>
 </html>

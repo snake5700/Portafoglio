@@ -1,11 +1,14 @@
 <?php
 
+session_start();
+
 require_once("database/queryUsers.php");
 include_once("utility.php");
 
 if(!isset($_POST["Registration"]))
-    writeLog("Accesso non autorizzato:".date("Y-m-d H:i:s").",".$_SERVER["REMOTE_ADDR"].",".$_SERVER["HTTP_USER_AGENT"]."\n");
+    writeLog("Accesso non autorizzato:".date("Y-m-d H:i:s").",".$_SERVER["REMOTE_ADDR"].",".$_SERVER["HTTP_USER_AGENT"]."\n"); // Check how to write a better log file.
 
+// Additional check.
 if((empty($_POST["surname"])) || (empty($_POST["name"])) || (empty($_POST["email"])) || (empty($_POST["password"])) || (empty($_POST["confirm"])))
     header("Location: index.php");
 
@@ -27,8 +30,14 @@ if($password != $confirm)
 
 $password = password_hash($password, PASSWORD_DEFAULT);
 
-if(!insert($surname, $name, $username, $password))
+if(!insert($surname, $name, $username, $password)){
     header("Location: index.php");
-else
+    exit();
+}
+else{
+    $_SESSION["user"] = 1; // I can't use sensible data.
+    $_SESSION["expire"] = time() + 360;
     header("Location: private/");
+    exit();
+}
 ?>

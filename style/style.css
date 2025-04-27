@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+html,body{height: 100%;}
+
 h1{font-size: 2.6rem;}
 
 p{text-align: justify;}
@@ -30,7 +32,10 @@ li{
 
 .center{text-align: center;}
 
-.right{float: right;}
+.right{
+    float: right;
+    clear: both;
+}
 
 .keyword{
     color: #da5c1e;
@@ -55,15 +60,18 @@ a:hover{
 body{
     src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header{border-bottom: 2px solid #f4f4f4;}
 
 header a{color: #fff;}
+
+main{flex: 1;}
 
 main .info{
     padding: 2.5rem 1.5rem;
@@ -98,7 +106,7 @@ form{
 
 form > .form-group{
     padding: 0.8rem;
-    width: 18rem;
+    width: 50%;
 }
 
 form label{
@@ -107,7 +115,7 @@ form label{
 }
 
 form  input{
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     width: 100%;
 }
@@ -131,9 +139,9 @@ footer .social-desktop{
 
 /*Common area*/
 header, footer{
+    width: 100%;
     background-color: #333;
     color: #fff;
-    min-height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
